@@ -1,0 +1,148 @@
+%input__ico {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.form__input-container {
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.form__input-wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.form__input {
+	width: 100%;
+	padding: 23px 70px;
+	border-radius: 40px;
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.6rem;
+	line-height: 150%;
+	color: $color-text;
+	background: $color-input;
+	border: none;
+
+	&:focus {
+		outline: none;
+		border: none;
+	}
+
+	&::placeholder {
+		color: $color-dark-text;
+	}
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+	border: none;
+	-webkit-text-fill-color: $color-text;
+	box-shadow: 0 0 0px 1000px $color-input inset;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+.email.form__ico-before {
+	left: 30px;
+	@extend %input__ico;
+	background-image: url(/svg/email.svg);
+}
+
+.password.form__ico-before {
+	left: 30px;
+	@extend %input__ico;
+	background-image: url(/svg/password.svg);
+}
+
+.form__checkbox-wrapper_flex {
+	display: flex;
+	align-items: center;
+}
+
+.form__checkbox-wrapper_fit {
+	position: relative;
+}
+
+.form__checkbox {
+	position: absolute;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	margin: 0;
+	cursor: pointer;
+	z-index: 10;
+}
+
+.form__checkbox-mark {
+	width: 32px;
+	height: 32px;
+	flex-shrink: 0;
+	border-radius: 7px;
+	background-color: $color-input;
+}
+
+.form__checkbox:checked + .form__checkbox-mark::after {
+	content: "✓";
+	position: absolute;
+	left: 6px;
+	top: 3px;
+	font-size: 24px;
+}
+
+.form__checkbox-label {
+	padding-left: 10px;
+
+	a {
+		color: $color-text;
+	}
+}
+
+.form__text-alert {
+	display: none;
+	height: 20px;
+	color: $color-error;
+	padding-left: 20px;
+}
+
+.not-email .form__ico-after,
+.not-password .form__ico-after,
+.invalid-email .form__ico-after,
+.invalid-password .form__ico-after {
+	right: 30px;
+	@extend %input__ico;
+	background-image: url(/svg/error.svg);
+}
+
+.not-email .form__input,
+.not-password .form__input,
+.invalid-email .form__input,
+.invalid-password .form__input,
+.not-checkbox .form__checkbox-mark {
+	box-shadow: inset 0px -3px 0px $color-error;
+}
+
+.not-email .form__text-alert_not,
+.not-password .form__text-alert_not,
+.not-checkbox .form__text-alert,
+.invalid-email .form__text-alert_invalid,
+.invalid-password .form__text-alert_invalid {
+	display: block;
+}
+
+.not-email.form__input-container,
+.not-password.form__input-container,
+.invalid-email.form__input-container,
+.invalid-password.form__input-container,
+.not-checkbox.form__input-container {
+	margin-bottom: 20px;
+}

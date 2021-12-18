@@ -1,0 +1,320 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Roboto", Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  min-width: 375px;
+  background-color: #230e2b;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 150%;
+  font-family: "Roboto", Verdana, sans-serif;
+  color: #ffffff;
+}
+
+.container {
+  height: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 769px) {
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.form {
+  width: 100%;
+  padding: 45px;
+}
+
+@media (min-width: 768px) {
+  .form {
+    width: 600px;
+  }
+}
+
+.form__title {
+  font-weight: 500;
+  font-size: 3.6rem;
+  font-style: normal;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.email.form__ico-before, .password.form__ico-before, .not-email .form__ico-after,
+.not-password .form__ico-after,
+.invalid-email .form__ico-after,
+.invalid-password .form__ico-after {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form__input-container {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.form__input-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.form__input {
+  width: 100%;
+  padding: 23px 70px;
+  border-radius: 40px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 150%;
+  color: #ffffff;
+  background: #42204e;
+  border: none;
+}
+
+.form__input:focus {
+  outline: none;
+  border: none;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: #8b5d9a;
+}
+
+.form__input:-ms-input-placeholder {
+  color: #8b5d9a;
+}
+
+.form__input::-ms-input-placeholder {
+  color: #8b5d9a;
+}
+
+.form__input::placeholder {
+  color: #8b5d9a;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px #42204e inset;
+          box-shadow: 0 0 0px 1000px #42204e inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.email.form__ico-before {
+  left: 30px;
+  background-image: url(/svg/email.svg);
+}
+
+.password.form__ico-before {
+  left: 30px;
+  background-image: url(/svg/password.svg);
+}
+
+.form__checkbox-wrapper_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form__checkbox-wrapper_fit {
+  position: relative;
+}
+
+.form__checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.form__checkbox-mark {
+  width: 32px;
+  height: 32px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 7px;
+  background-color: #42204e;
+}
+
+.form__checkbox:checked + .form__checkbox-mark::after {
+  content: "✓";
+  position: absolute;
+  left: 6px;
+  top: 3px;
+  font-size: 24px;
+}
+
+.form__checkbox-label {
+  padding-left: 10px;
+}
+
+.form__checkbox-label a {
+  color: #ffffff;
+}
+
+.form__text-alert {
+  display: none;
+  height: 20px;
+  color: #a01414;
+  padding-left: 20px;
+}
+
+.not-email .form__ico-after,
+.not-password .form__ico-after,
+.invalid-email .form__ico-after,
+.invalid-password .form__ico-after {
+  right: 30px;
+  background-image: url(/svg/error.svg);
+}
+
+.not-email .form__input,
+.not-password .form__input,
+.invalid-email .form__input,
+.invalid-password .form__input,
+.not-checkbox .form__checkbox-mark {
+  -webkit-box-shadow: inset 0px -3px 0px #a01414;
+          box-shadow: inset 0px -3px 0px #a01414;
+}
+
+.not-email .form__text-alert_not,
+.not-password .form__text-alert_not,
+.not-checkbox .form__text-alert,
+.invalid-email .form__text-alert_invalid,
+.invalid-password .form__text-alert_invalid {
+  display: block;
+}
+
+.not-email.form__input-container,
+.not-password.form__input-container,
+.invalid-email.form__input-container,
+.invalid-password.form__input-container,
+.not-checkbox.form__input-container {
+  margin-bottom: 20px;
+}
+
+.button::before, .button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 40px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 30px;
+}
+
+.button {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 23px;
+  border-radius: 40px;
+  border: none;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 150%;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  -webkit-transition: hover 0.5s ease;
+  transition: hover 0.5s ease;
+  background: #ee0979;
+  background: -webkit-gradient(linear, left top, right top, from(#ee0979), to(#ff6a00));
+  background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  cursor: pointer;
+}
+
+.button:active {
+  background: #f43048;
+}
+
+.button:visited {
+  color: #ffffff;
+}
+
+.button:focus {
+  outline: none;
+  border: none;
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: #ee0979;
+  background: -webkit-gradient(linear, left top, right top, from(#ee0979), to(#ff6a00));
+  background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+}
+
+.button::after {
+  left: 1px;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+  z-index: -1;
+  background: #230e2b;
+}
+/*# sourceMappingURL=style.css.map */

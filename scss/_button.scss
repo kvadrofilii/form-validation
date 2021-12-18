@@ -1,0 +1,76 @@
+%button {
+	content: "";
+	display: block;
+	position: absolute;
+	border-radius: 40px;
+	transition: all 0.5s;
+}
+
+.button-wrapper {
+	display: flex;
+	justify-content: center;
+	padding-top: 30px;
+}
+
+.button {
+	display: block;
+	position: relative;
+	width: 100%;
+	padding: 23px;
+	border-radius: 40px;
+	border: none;
+	font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 150%;
+	text-decoration: none;
+	color: $color-text;
+	text-align: center;
+	transition: hover 0.5s ease;
+	background: $color-button;
+	background: $linear-gradient;
+	background-clip: text;
+	-webkit-background-clip: text;
+	flex-shrink: 0;
+	cursor: pointer;
+
+	&:active {
+		background: $color-active;
+	}
+
+	&:visited {
+		color: $color-text;
+	}
+
+	&:focus {
+		outline: none;
+		border: none;
+	}
+
+	&:hover::after {
+		left: 100%;
+		top: 100%;
+		bottom: 100%;
+		right: 100%;
+	}
+
+	&::before {
+		@extend %button;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+		background: $color-button;
+		background: $linear-gradient;
+	}
+
+	&::after {
+		@extend %button;
+		left: 1px;
+		top: 1px;
+		bottom: 1px;
+		right: 1px;
+		z-index: -1;
+		background: $color-background;
+	}
+}
