@@ -48,13 +48,16 @@ emailInput.addEventListener('input', (event) => {
 	if (!email) {
 		emailAlert.classList.add('not-email');
 		emailAlert.classList.remove('invalid-email');
-	} else if (!validateEmail(email)) {
+	} if (!validateEmail(email)) {
 		emailAlert.classList.add('invalid-email');
 		emailAlert.classList.remove('not-email');
 	} else {
 		emailAlert.classList.remove('not-email');
 	}
 
+	if (validateEmail(email)) {
+		emailAlert.classList.remove('invalid-email');
+	}
 });
 
 passwordInput.addEventListener('input', (event) => {
