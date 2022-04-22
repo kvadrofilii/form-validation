@@ -2,55 +2,63 @@
 <html lang="ru">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Form validation</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Form validation</title>
 </head>
 
 <body>
-	<main class="container">
-		<form action="" class="form" method="post" novalidate>
-			<h1 class="form__title">Регистрация</h1>
+  <main class="container">
+    <form action="" class="form" method="post" novalidate>
+      <h1 class="form__title">Регистрация</h1>
 
-			<div class="form__input-container" id="email-alert">
-				<div class="form__input-wrapper">
-					<span class="form__ico-before email"></span>
-					<input class="form__input" type="email" id="email-input" placeholder="Введите email">
-					<span class="form__ico-after"></span>
-				</div>
-				<div class="form__text-alert form__text-alert_not">Поле обязательно для заполнения</div>
-				<div class="form__text-alert form__text-alert_invalid">Email невалидный</div>
-			</div>
+      <div class="form__input-container" id="email-alert">
+        <div class="form__input-wrapper">
+          <span class="form__ico-before email"></span>
+          <input class="form__input" type="email" id="email-input" placeholder="Введите email">
+          <span class="form__ico-after"></span>
+        </div>
+        <div class="form__text-alert form__text-alert_not">Поле обязательно для заполнения</div>
+        <div class="form__text-alert form__text-alert_invalid">Email невалидный</div>
+      </div>
 
-			<div class="form__input-container" id="password-alert">
-				<div class="form__input-wrapper">
-					<span class="form__ico-before password"></span>
-					<input class="form__input" type="password" id="password-input" placeholder="Введите пароль" maxlength="20">
-					<span class="form__ico-after"></span>
-				</div>
-				<div class="form__text-alert form__text-alert_not">Поле обязательно для заполнения</div>
-				<div class="form__text-alert form__text-alert_invalid">Пароль должен содержать от 8 до 20 символов</div>
-			</div>
+      <div class="form__input-container" id="password-alert">
+        <div class="form__input-wrapper">
+          <span class="form__ico-before password"></span>
+          <input class="form__input" type="password" id="password-input" placeholder="Введите пароль" maxlength="20">
+          <span class="form__ico-after"></span>
+        </div>
+        <div class="form__text-alert form__text-alert_not">Поле обязательно для заполнения</div>
+        <div class="form__text-alert form__text-alert_invalid">Пароль должен содержать от 8 до 20 символов</div>
+      </div>
 
-			<div class="form__input-container" id="checkbox-alert">
-				<div class="form__checkbox-wrapper_flex">
-					<div class="form__checkbox-wrapper_fit">
-						<input class="form__checkbox" type="checkbox" id="checkbox">
-						<div class="form__checkbox-mark"></div>
-					</div>
-					<label class="form__checkbox-label">Я согласен с <a href="#" rel="nofollow noopener noreferrer"
-							target="_blank">Правилами пользования приложением</a></label>
-				</div>
-				<div class="form__text-alert">Поле обязательно для заполнения</div>
-			</div>
-			<div class="button-wrapper">
-				<button class="button" type="submit">Регистрация</button>
-			</div>
-		</form>
-	</main>
-	<script src="script.js"></script>
+      <div class="form__input-container" id="checkbox-alert">
+        <div class="form__checkbox-wrapper_flex">
+          <div class="form__checkbox-wrapper_fit">
+            <input class="form__checkbox" type="checkbox" id="checkbox">
+            <div class="form__checkbox-mark"></div>
+          </div>
+          <label class="form__checkbox-label">Я согласен с <a href="#" rel="nofollow noopener noreferrer"
+              target="_blank">Правилами пользования приложением</a></label>
+        </div>
+        <div class="form__text-alert">Поле обязательно для заполнения</div>
+      </div>
+      <div class="button-wrapper">
+        <button class="button" type="submit">Регистрация</button>
+      </div>
+    </form>
+  </main>
+  <div class="overflow">
+    <div class="modal">
+      Удачный вход!
+      <button class="modal__button">
+        <div class="modal__ico"></div>
+      </button>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
