@@ -106,9 +106,7 @@ document.addEventListener('keydown', e =>
 
 modalCloseBtn.addEventListener('click', closeModal);
 
-overflow.addEventListener('click', (e) =>
-  e.target === overflow && closeModal()
-);
+overflow.addEventListener('click', e => e.target === overflow && closeModal());
 
 
 function closeModal() {
